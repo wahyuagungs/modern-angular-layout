@@ -11,14 +11,27 @@
 npm-debug.log
 yarn-error.log
 
+/www
+/plugins
+/platforms
+
+# Electron
+/dist-electron
+/dist-packages
+/electron.main.js
+
 # IDEs and editors
-.idea/
+.idea/*
+!.idea/runConfigurations/
+!.idea/codeStyleSettings.xml
 .project
 .classpath
 .c9/
 *.launch
 .settings/
+xcuserdata/
 *.sublime-workspace
+
 
 # Visual Studio Code
 .vscode/*
@@ -36,6 +49,9 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+/.sass-cache
+/reports
+/src/translations/template.*
 
 # System files
 .DS_Store
