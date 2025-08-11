@@ -1,17 +1,27 @@
 import { Routes } from '@angular/router';
-import { Dashboard } from './pages/dashboard/dashboard';
-import { Users } from './pages/users/users';
+import { Home } from './pages/home/home';
+import { AllCases } from './pages/all-cases/all-cases';
+import { ProcessingRequests } from './pages/processing-requests/processing-requests';
+import { TaxpayerSearch } from './pages/taxpayer-search/taxpayer-search';
+import { TaxOfficersSearch } from './pages/tax-officers-search/tax-officers-search';
 
 export const routes: Routes = [
-  // Redirect the default empty path to the dashboard
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  // Redirect the default empty path to home
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  // Route for the Dashboard page
-  { path: 'dashboard', component: Dashboard, title: 'Dashboard' },
+  // Home page (blank anchor page)
+  { path: 'home', component: Home, title: 'Home' },
 
-  // Route for the Users page
-  { path: 'users', component: Users, title: 'Users' },
+  // Case Management routes
+  { path: 'all-cases', component: AllCases, title: 'All Cases' },
+  { path: 'processing-requests', component: ProcessingRequests, title: 'Processing Requests' },
+
+  // Taxpayer routes
+  { path: 'taxpayer-search', component: TaxpayerSearch, title: 'Taxpayer Search' },
+
+  // Tax Officer routes
+  { path: 'tax-officers-search', component: TaxOfficersSearch, title: 'Tax Officers Search' },
 
   // Wildcard route to handle any unknown URLs
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'home' }
 ];

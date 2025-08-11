@@ -1,7 +1,33 @@
 .main-footer {
-  text-align: center;
+  background-color: #212c5f;
+  color: white;
+  padding: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 12px;
   padding: 1rem;
-  background-color: #222;
-  color: #aaa;
-  font-size: 0.875rem;
+}
+
+.footer-logo {
+  margin-bottom: 0;
+}
+
+.footer-logo-image {
+  height: 30px;
+  width: auto;
+}
+
+.footer-text {
+  text-align: left;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
 }

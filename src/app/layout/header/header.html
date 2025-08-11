@@ -1,15 +1,39 @@
 <header class="main-header">
-  <div class="logo">
-    <a routerLink="/dashboard">ModernApp</a>
+  <div class="header-top">
+    <div class="logo">
+      <a routerLink="/home">
+        <img src="assets/images/CoreLogo.png" alt="Logo" class="logo-image">
+      </a>
+    </div>
+    <div class="user-section">
+      <span class="welcome-text">Welcome, username!</span>
+      <a href="#" class="logout-link">Logout</a>
+    </div>
   </div>
-  <nav class="main-nav">
-    <ul>
-      <li>
-        <a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+  
+  <nav class="dropdown-nav">
+    <ul class="dropdown-menu-list">
+      <li class="dropdown-item">
+        <a href="#" class="dropdown-toggle active">Case Management</a>
+        <ul class="dropdown-submenu">
+          <li><a routerLink="/all-cases" class="submenu-link active">All Cases</a></li>
+          <li><a routerLink="/processing-requests" class="submenu-link active">Processing Requests</a></li>
+        </ul>
       </li>
-      <li>
-        <a routerLink="/users" routerLinkActive="active-link">Users</a>
+      <li class="dropdown-item">
+        <a href="#" class="dropdown-toggle active">Taxpayers</a>
+        <ul class="dropdown-submenu">
+          <li><a routerLink="/taxpayer-search" class="submenu-link active">Taxpayer Search</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-item">
+        <a href="#" class="dropdown-toggle active">Tax Officers</a>
+        <ul class="dropdown-submenu">
+          <li><a routerLink="/tax-officers-search" class="submenu-link active">Tax Officers Search</a></li>
+        </ul>
       </li>
     </ul>
   </nav>
+  
+  <div class="yellow-separator"></div>
 </header>
