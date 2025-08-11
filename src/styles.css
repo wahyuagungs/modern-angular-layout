@@ -4,3 +4,113 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
+
+/* Global Page Layout Styles */
+.page-container {
+  padding: 8px;
+  width: 99%;
+  margin: 0;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #212c5f;
+  padding-bottom: 1rem;
+  /*max-width: 800px;*/
+}
+
+.page-header h1 {
+  color: #212c5f;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.page-header p {
+  color: #666;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.page-content {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 400px;
+}
+
+.content-placeholder {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Global Table Styles */
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.data-table thead th {
+  background-color: #ffd54a;
+  color: #000000;
+  font-weight: 600;
+  padding: 12px 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.data-table tbody td {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 8px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.select-btn {
+  background-color: #26378c;
+  color: white;
+  border: 1px solid #2b3664;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.select-btn:hover {
+  background-color: #1e2a6e;
+}
+
+.select-btn:active {
+  background-color: #162050;
+}
+
+.data-table th,
+.data-table td {
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.data-table th:first-child,
+.data-table td:first-child {
+  min-width: 80px;
+  text-align: center;
+}

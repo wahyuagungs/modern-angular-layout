@@ -4,8 +4,45 @@
     <p>Search Case using the selector below</p>
   </div>
   <div class="page-content">
-    <div class="content-placeholder">
-      <p>All Cases content will be implemented here.</p>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Case Number</th>
+            <th>Taxpayer ID Number</th>
+            <th>Taxpayer Name</th>
+            <th>Case Type</th>
+            <th>Case Status</th>
+            <th>Case Status Portal</th>
+            <th>Case Source</th>
+            <th>Created</th>
+            <th>Is Closed</th>
+            <th>Workflow Step</th>
+            <th>Tax Region</th>
+            <th>Tax Office</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let case of cases">
+            <td>
+              <button class="select-btn" (click)="selectCase(case)">Select</button>
+            </td>
+            <td>{{ case.caseNumber }}</td>
+            <td>{{ case.taxpayerIdNumber }}</td>
+            <td>{{ case.taxpayerName }}</td>
+            <td>{{ case.caseType }}</td>
+            <td>{{ case.caseStatus }}</td>
+            <td>{{ case.caseStatusPortal }}</td>
+            <td>{{ case.caseSource }}</td>
+            <td>{{ case.created }}</td>
+            <td>{{ case.isClosed ? 'Yes' : 'No' }}</td>
+            <td>{{ case.workflowStep }}</td>
+            <td>{{ case.taxRegion }}</td>
+            <td>{{ case.taxOffice }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
