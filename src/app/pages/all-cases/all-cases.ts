@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CasesDataService, CaseData } from '../../services/cases-data.service';
 
 @Component({
   selector: 'app-all-cases',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './all-cases.html',
   styleUrl: './all-cases.css'
 })

@@ -24,23 +24,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let case of cases">
-            <td>
-              <button class="select-btn" (click)="selectCase(case)">Select</button>
-            </td>
-            <td>{{ case.caseNumber }}</td>
-            <td>{{ case.taxpayerIdNumber }}</td>
-            <td>{{ case.taxpayerName }}</td>
-            <td>{{ case.caseType }}</td>
-            <td>{{ case.caseStatus }}</td>
-            <td>{{ case.caseStatusPortal }}</td>
-            <td>{{ case.caseSource }}</td>
-            <td>{{ case.created }}</td>
-            <td>{{ case.isClosed ? 'Yes' : 'No' }}</td>
-            <td>{{ case.workflowStep }}</td>
-            <td>{{ case.taxRegion }}</td>
-            <td>{{ case.taxOffice }}</td>
-          </tr>
+          @for (caseItem of cases; track caseItem.id) {
+            <tr>
+              <td>
+                <button class="select-btn" (click)="selectCase(caseItem)">Select</button>
+              </td>
+              <td>{{ caseItem.caseNumber }}</td>
+              <td>{{ caseItem.taxpayerIdNumber }}</td>
+              <td>{{ caseItem.taxpayerName }}</td>
+              <td>{{ caseItem.caseType }}</td>
+              <td>{{ caseItem.caseStatus }}</td>
+              <td>{{ caseItem.caseStatusPortal }}</td>
+              <td>{{ caseItem.caseSource }}</td>
+              <td>{{ caseItem.created }}</td>
+              <td>{{ caseItem.isClosed ? 'Yes' : 'No' }}</td>
+              <td>{{ caseItem.workflowStep }}</td>
+              <td>{{ caseItem.taxRegion }}</td>
+              <td>{{ caseItem.taxOffice }}</td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>
