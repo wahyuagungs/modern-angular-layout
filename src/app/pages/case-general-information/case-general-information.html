@@ -1,0 +1,111 @@
+<div class="page-container">
+  <div class="page-header">
+    <h1>Case General Information</h1>
+    <p *ngIf="caseDetails">Case Number: {{ caseDetails.caseNumber }}</p>
+  </div>
+  <div class="page-content">
+    <div *ngIf="caseDetails; else noCaseFound">
+      <div class="info-panel">
+        <div class="info-header">Basic Information</div>
+        <div class="info-section">
+          <div class="info-grid">
+            <div class="info-item">
+              <label>Case Number:</label>
+              <span>{{ caseDetails.caseNumber }}</span>
+            </div>
+            <div class="info-item">
+              <label>Taxpayer ID:</label>
+              <span>{{ caseDetails.taxpayerIdNumber }}</span>
+            </div>
+            <div class="info-item">
+              <label>Taxpayer Name:</label>
+              <span>{{ caseDetails.taxpayerName }}</span>
+            </div>
+            <div class="info-item">
+              <label>Case Type:</label>
+              <span>{{ caseDetails.caseType }}</span>
+            </div>
+            <div class="info-item">
+              <label>Status:</label>
+              <span>{{ caseDetails.caseStatus }}</span>
+            </div>
+            <div class="info-item">
+              <label>Priority:</label>
+              <span>{{ caseDetails.priority }}</span>
+            </div>
+            <div class="info-item">
+              <label>Assigned Officer:</label>
+              <span>{{ caseDetails.assignedOfficer }}</span>
+            </div>
+            <div class="info-item">
+              <label>Estimated Amount:</label>
+              <span>{{ caseDetails.estimatedAmount | currency:caseDetails.currency }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-header">Case Details</div>
+        <div class="info-section">
+          <div class="info-grid">
+            <div class="info-item">
+              <label>Created Date:</label>
+              <span>{{ caseDetails.created }}</span>
+            </div>
+            <div class="info-item">
+              <label>Last Activity:</label>
+              <span>{{ caseDetails.lastActivity }}</span>
+            </div>
+            <div class="info-item">
+              <label>Next Review Date:</label>
+              <span>{{ caseDetails.nextReviewDate }}</span>
+            </div>
+            <div class="info-item">
+              <label>Workflow Step:</label>
+              <span>{{ caseDetails.workflowStep }}</span>
+            </div>
+            <div class="info-item">
+              <label>Tax Region:</label>
+              <span>{{ caseDetails.taxRegion }}</span>
+            </div>
+            <div class="info-item">
+              <label>Tax Office:</label>
+              <span>{{ caseDetails.taxOffice }}</span>
+            </div>
+          </div>
+          <div class="description-section">
+            <label>Description:</label>
+            <p>{{ caseDetails.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-header">Documents</div>
+        <div class="info-section">
+          <ul class="documents-list">
+            <li *ngFor="let document of caseDetails.documents">{{ document }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-header">Notes</div>
+        <div class="info-section">
+          <ul class="notes-list">
+            <li *ngFor="let note of caseDetails.notes">{{ note }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noCaseFound>
+      <div class="info-panel">
+        <div class="info-section">
+          <p>Case not found or invalid case ID.</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

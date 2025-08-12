@@ -1,0 +1,91 @@
+/* Page-specific styles for case-general-information component */
+/* All common page styles are now in global styles.css */
+
+.info-panel {
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.info-header {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.info-section {
+  padding: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item label {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.info-item span {
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.description-section {
+  margin-top: 1rem;
+}
+
+.description-section label {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.description-section p {
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.documents-list, .notes-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.documents-list li, .notes-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.documents-list li {
+  color: #26378c;
+  font-weight: 500;
+}
+
+.notes-list li {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

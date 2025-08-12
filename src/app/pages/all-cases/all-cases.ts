@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { CasesDataService, CaseData } from '../../services/cases-data.service';
 
 @Component({
@@ -10,8 +11,8 @@ import { CasesDataService, CaseData } from '../../services/cases-data.service';
 })
 export class AllCases implements OnInit {
   cases: CaseData[] = [];
-
-  constructor(private casesDataService: CasesDataService) {}
+  private casesDataService = inject(CasesDataService);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.casesDataService.getCases().subscribe(data => {
@@ -20,6 +21,6 @@ export class AllCases implements OnInit {
   }
 
   selectCase(caseData: CaseData): void {
-    console.log('Selected case:', caseData);
+    this.router.navigate(['/case-general-information', caseData.id]);
   }
 }
