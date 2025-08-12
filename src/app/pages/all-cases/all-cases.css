@@ -1,2 +1,57 @@
 /* Page-specific styles for all-cases component */
 /* All common page styles are now in global styles.css */
+
+.search-panel {
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.search-header {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.search-body {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.form-group input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-btn {
+  background-color: #26378c;
+  color: white;
+  border: 1px solid #2b3664;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  align-self: flex-end;
+}
+
+.search-btn:hover {
+  background-color: #1e2a6e;
+}
+
+.search-btn:active {
+  background-color: #162050;
+}
