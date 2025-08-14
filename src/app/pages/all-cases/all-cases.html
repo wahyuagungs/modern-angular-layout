@@ -5,14 +5,14 @@
       <div class="search-body">
         <div class="form-group">
           <label for="caseNumber">Case Number</label>
-          <input type="text" id="caseNumber" />
+          <input type="text" id="caseNumber" [(ngModel)]="caseNumber" />
         </div>
         <div class="form-group">
           <label for="taxpayerId">Taxpayer Identification Number</label>
           <input type="text" id="taxpayerId" />
         </div>
         <div class="button-container">
-          <button class="search-btn">Search Case</button>
+          <button class="search-btn" (click)="searchCases()">Search Case</button>
         </div>
       </div>
     </div>
