@@ -1,0 +1,73 @@
+@if (isVisible) {
+  <div class="modal-overlay" (click)="onClose()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">Case Information</h3>
+        <button class="close-btn" (click)="onClose()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        @if (caseData) {
+          <div class="case-info">
+            <div class="info-item">
+              <label>Case Number:</label>
+              <span>{{ caseData.CaseNumber }}</span>
+            </div>
+
+            <div class="info-item">
+              <label>Taxpayer ID Number:</label>
+              <span>{{ caseData.MainTaxpayerTIN }}</span>
+            </div>
+
+            <div class="info-item">
+              <label>Taxpayer Name:</label>
+              <span>{{ caseData.MainTaxpayerName }}</span>
+            </div>
+
+            <div class="info-item">
+              <label>Case Type:</label>
+              <span>{{ caseData.CaseType }}</span>
+            </div>
+
+            <div class="info-item">
+              <label>Case Status:</label>
+              <span>{{ caseData.CaseStatus }}</span>
+            </div>
+
+            <div class="info-item">
+              <label>Is Closed:</label>
+              <span>{{ caseData.IsClosed ? 'Yes' : 'No' }}</span>
+            </div>
+          </div>
+
+          <div class="separator"></div>
+
+          <div class="modal-actions">
+            <button class="action-btn cancel-btn" (click)="onCancelCase()">Cancel Case</button>
+            <button class="action-btn coretax-btn" (click)="onCoretaxCase()">Go to Coretax</button>
+            <button class="action-btn view-btn" (click)="onViewCase()">View Detail</button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+@if (showConfirmationModal) {
+  <div class="confirmation-overlay" (click)="onCancelConfirmation()">
+    <div class="confirmation-container" (click)="$event.stopPropagation()">
+      <div class="confirmation-header">
+        <h4>Confirm Action</h4>
+      </div>
+
+      <div class="confirmation-body">
+        <p>Are you sure you want to cancel this case?</p>
+
+        <div class="confirmation-actions">
+          <button class="confirm-btn yes-btn" (click)="onConfirmCancel()">Yes</button>
+          <button class="confirm-btn no-btn" (click)="onCancelConfirmation()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

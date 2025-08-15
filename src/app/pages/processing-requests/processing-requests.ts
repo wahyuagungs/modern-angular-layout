@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {Component, OnInit, inject, ChangeDetectionStrategy} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProcessingRequestsService, ProcessingRequestData } from '../../services/processing-requests.service';
 
@@ -7,7 +7,8 @@ import { ProcessingRequestsService, ProcessingRequestData } from '../../services
   standalone: true,
   imports: [FormsModule],
   templateUrl: './processing-requests.html',
-  styleUrl: './processing-requests.css'
+  styleUrl: './processing-requests.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProcessingRequests implements OnInit {
   processingRequests: ProcessingRequestData[] = [];
@@ -17,7 +18,7 @@ export class ProcessingRequests implements OnInit {
   status: string = '';
   taxRegion: string = '';
   taxOffice: string = '';
-  
+
   private processingRequestsService = inject(ProcessingRequestsService);
 
   ngOnInit(): void {

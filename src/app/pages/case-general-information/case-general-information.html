@@ -1,10 +1,12 @@
 <div class="page-container">
   <div class="page-header">
     <h1>Case General Information</h1>
-    <p *ngIf="caseDetails">Case Number: {{ caseDetails.CaseNumber }}</p>
+    @if (caseDetails) {
+      <p>Case Number: {{ caseDetails.CaseNumber }}</p>
+    }
   </div>
   <div class="page-content">
-    <div *ngIf="caseDetails; else noCaseFound">
+    @if (caseDetails) {
       <div class="info-panel">
         <div class="info-header">Basic Information</div>
         <div class="info-section">
@@ -85,7 +87,9 @@
         <div class="info-header">Documents</div>
         <div class="info-section">
           <ul class="documents-list">
-            <li *ngFor="let document of caseDetails.documents">{{ document }}</li>
+            @for (document of caseDetails.documents; track document) {
+              <li>{{ document }}</li>
+            }
           </ul>
         </div>
       </div>
@@ -94,18 +98,18 @@
         <div class="info-header">Notes</div>
         <div class="info-section">
           <ul class="notes-list">
-            <li *ngFor="let note of caseDetails.notes">{{ note }}</li>
+            @for (note of caseDetails.notes; track note) {
+              <li>{{ note }}</li>
+            }
           </ul>
         </div>
       </div>
-    </div>
-
-    <ng-template #noCaseFound>
+    } @else {
       <div class="info-panel">
         <div class="info-section">
           <p>Case not found or invalid case ID.</p>
         </div>
       </div>
-    </ng-template>
+    }
   </div>
 </div>

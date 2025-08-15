@@ -9,10 +9,11 @@
         </div>
         <div class="form-group">
           <label for="taxpayerId">Taxpayer Identification Number</label>
-          <input type="text" id="taxpayerId" />
+          <input type="text" id="taxpayerId" [(ngModel)]="taxpayerId" />
         </div>
         <div class="button-container">
           <button class="search-btn" (click)="searchCases()">Search Case</button>
+          <button class="reset-btn" (click)="resetSearch()">Reset</button>
         </div>
       </div>
     </div>
@@ -60,3 +61,12 @@
     </div>
   </div>
 </div>
+
+<app-case-modal 
+  [isVisible]="showModal"
+  [caseData]="selectedCase"
+  (close)="onModalClose()"
+  (viewCase)="onViewCase($event)"
+  (cancelCase)="onCancelCase($event)"
+  (coretaxCase)="onCoretaxCase($event)">
+</app-case-modal>

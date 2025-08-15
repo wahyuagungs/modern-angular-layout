@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {Component, OnInit, inject, ChangeDetectionStrategy} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TaxOfficersSearchService, TaxOfficerData } from '../../services/tax-officers-search.service';
@@ -8,7 +8,8 @@ import { TaxOfficersSearchService, TaxOfficerData } from '../../services/tax-off
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './tax-officers-search.html',
-  styleUrl: './tax-officers-search.css'
+  styleUrl: './tax-officers-search.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaxOfficersSearch implements OnInit {
   taxOfficers: TaxOfficerData[] = [];
@@ -17,7 +18,7 @@ export class TaxOfficersSearch implements OnInit {
   unitOrganisasi: string = '';
   kantor: string = '';
   isPensiun: string = 'false';
-  
+
   private taxOfficersSearchService = inject(TaxOfficersSearchService);
 
   ngOnInit(): void {
@@ -37,6 +38,17 @@ export class TaxOfficersSearch implements OnInit {
       unitOrganisasi: this.unitOrganisasi,
       kantor: this.kantor,
       isPensiun: this.isPensiun
+    });
+  }
+
+  resetSearch(): void {
+    this.namaUsernameNip = '';
+    this.jabatan = '';
+    this.unitOrganisasi = '';
+    this.kantor = '';
+    this.isPensiun = 'false';
+    this.taxOfficersSearchService.getTaxOfficers().subscribe(data => {
+      this.taxOfficers = data;
     });
   }
 }

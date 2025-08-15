@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CaseDetailsService, CaseDetails } from '../../services/case-details.service';
@@ -8,7 +8,8 @@ import { CaseDetailsService, CaseDetails } from '../../services/case-details.ser
   standalone: true,
   imports: [CommonModule],
   templateUrl: './case-general-information.html',
-  styleUrl: './case-general-information.css'
+  styleUrl: './case-general-information.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CaseGeneralInformation implements OnInit {
   caseDetails: CaseDetails | undefined;

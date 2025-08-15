@@ -48,6 +48,7 @@
 .button-container {
   display: flex;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 .search-btn {
@@ -68,4 +69,24 @@
 
 .search-btn:active {
   background-color: #162050;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+  color: white;
+  border: 1px solid #5a6268;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: #5a6268;
+}
+
+.reset-btn:active {
+  background-color: #495057;
 }
