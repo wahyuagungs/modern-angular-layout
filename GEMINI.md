@@ -65,7 +65,7 @@ ng test
 To serve the SSR build, run:
 
 ```bash
-npm run serve:ssr:modern-angualr-layout
+npm run serve:ssr:modern-angular-layout
 ```
 
 ## Architecture Overview

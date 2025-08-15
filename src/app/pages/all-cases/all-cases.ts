@@ -25,7 +25,7 @@ export class AllCases implements OnInit {
   }
 
   selectCase(caseData: CaseData): void {
-    this.router.navigate(['/case-general-information', caseData.id]);
+    this.router.navigate(['/case-general-information', caseData.RecordId]);
   }
 
   searchCases(): void {

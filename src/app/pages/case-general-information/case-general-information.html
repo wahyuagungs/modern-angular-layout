@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="page-header">
     <h1>Case General Information</h1>
-    <p *ngIf="caseDetails">Case Number: {{ caseDetails.caseNumber }}</p>
+    <p *ngIf="caseDetails">Case Number: {{ caseDetails.CaseNumber }}</p>
   </div>
   <div class="page-content">
     <div *ngIf="caseDetails; else noCaseFound">
@@ -11,23 +11,23 @@
           <div class="info-grid">
             <div class="info-item">
               <label>Case Number:</label>
-              <span>{{ caseDetails.caseNumber }}</span>
+              <span>{{ caseDetails.CaseNumber }}</span>
             </div>
             <div class="info-item">
               <label>Taxpayer ID:</label>
-              <span>{{ caseDetails.taxpayerIdNumber }}</span>
+              <span>{{ caseDetails.MainTaxpayerTIN }}</span>
             </div>
             <div class="info-item">
               <label>Taxpayer Name:</label>
-              <span>{{ caseDetails.taxpayerName }}</span>
+              <span>{{ caseDetails.MainTaxpayerName }}</span>
             </div>
             <div class="info-item">
               <label>Case Type:</label>
-              <span>{{ caseDetails.caseType }}</span>
+              <span>{{ caseDetails.CaseType }}</span>
             </div>
             <div class="info-item">
               <label>Status:</label>
-              <span>{{ caseDetails.caseStatus }}</span>
+              <span>{{ caseDetails.CaseStatus }}</span>
             </div>
             <div class="info-item">
               <label>Priority:</label>
@@ -51,7 +51,7 @@
           <div class="info-grid">
             <div class="info-item">
               <label>Created Date:</label>
-              <span>{{ caseDetails.created }}</span>
+              <span>{{ caseDetails.CreatedDate }}</span>
             </div>
             <div class="info-item">
               <label>Last Activity:</label>
@@ -63,15 +63,15 @@
             </div>
             <div class="info-item">
               <label>Workflow Step:</label>
-              <span>{{ caseDetails.workflowStep }}</span>
+              <span>{{ caseDetails.WorkflowStep }}</span>
             </div>
             <div class="info-item">
               <label>Tax Region:</label>
-              <span>{{ caseDetails.taxRegion }}</span>
+              <span>{{ caseDetails.TaxRegion }}</span>
             </div>
             <div class="info-item">
               <label>Tax Office:</label>
-              <span>{{ caseDetails.taxOffice }}</span>
+              <span>{{ caseDetails.TaxOffice }}</span>
             </div>
           </div>
           <div class="description-section">

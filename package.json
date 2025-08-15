@@ -1,5 +1,5 @@
 {
-  "name": "modern-angualr-layout",
+  "name": "modern-angular-layout",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:modern-angualr-layout": "node dist/modern-angualr-layout/server/server.mjs"
+    "serve:ssr:modern-angular-layout": "node dist/modern-angular-layout/server/server.mjs"
   },
   "prettier": {
     "overrides": [

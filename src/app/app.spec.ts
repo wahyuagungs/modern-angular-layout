@@ -19,6 +19,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, modern-angualr-layout');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, modern-angular-layout');
   });
 });

@@ -36,23 +36,23 @@
           </tr>
         </thead>
         <tbody>
-          @for (caseItem of cases; track caseItem.id) {
+          @for (caseItem of cases; track caseItem.RecordId) {
             <tr>
               <td>
                 <button class="select-btn" (click)="selectCase(caseItem)">Select</button>
               </td>
-              <td>{{ caseItem.caseNumber }}</td>
-              <td>{{ caseItem.taxpayerIdNumber }}</td>
-              <td>{{ caseItem.taxpayerName }}</td>
-              <td>{{ caseItem.caseType }}</td>
-              <td>{{ caseItem.caseStatus }}</td>
-              <td>{{ caseItem.caseStatusPortal }}</td>
-              <td>{{ caseItem.caseSource }}</td>
-              <td>{{ caseItem.created }}</td>
-              <td>{{ caseItem.isClosed ? 'Yes' : 'No' }}</td>
-              <td>{{ caseItem.workflowStep }}</td>
-              <td>{{ caseItem.taxRegion }}</td>
-              <td>{{ caseItem.taxOffice }}</td>
+              <td>{{ caseItem.CaseNumber }}</td>
+              <td>{{ caseItem.MainTaxpayerTIN }}</td>
+              <td>{{ caseItem.MainTaxpayerName }}</td>
+              <td>{{ caseItem.CaseType }}</td>
+              <td>{{ caseItem.CaseStatus }}</td>
+              <td>{{ caseItem.CaseStatusPortal }}</td>
+              <td>{{ caseItem.CaseSource }}</td>
+              <td>{{ caseItem.CreatedDate }}</td>
+              <td>{{ caseItem.IsClosed ? 'Yes' : 'No' }}</td>
+              <td>{{ caseItem.WorkflowStep }}</td>
+              <td>{{ caseItem.TaxRegion }}</td>
+              <td>{{ caseItem.TaxOffice }}</td>
             </tr>
           }
         </tbody>

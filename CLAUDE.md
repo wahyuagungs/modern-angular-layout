@@ -18,7 +18,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `ng generate --help` - List available schematics
 
 ### Server-Side Rendering
-- `npm run serve:ssr:modern-angualr-layout` - Serve SSR build
+- `npm run serve:ssr:modern-angular-layout` - Serve SSR build
 - SSR is configured with entry point at `src/server.ts`
 
 ## Architecture Overview

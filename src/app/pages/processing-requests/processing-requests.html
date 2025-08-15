@@ -1,11 +1,98 @@
 <div class="page-container">
-  <div class="page-header">
-    <h1>Processing Requests</h1>
-    <p>Handle and monitor case processing requests</p>
-  </div>
   <div class="page-content">
-    <div class="content-placeholder">
-      <p>Processing Requests content will be implemented here.</p>
+    <div class="search-panel">
+      <div class="search-header">Search Processing Requests</div>
+      <div class="search-body">
+        <div class="form-group">
+          <label for="processingRequestNumber">Processing Request Number</label>
+          <input type="text" id="processingRequestNumber" [(ngModel)]="processingRequestNumber" />
+        </div>
+        <div class="form-group">
+          <label for="caseNumberRequestSource">Case Number Request Source</label>
+          <input type="text" id="caseNumberRequestSource" [(ngModel)]="caseNumberRequestSource" />
+        </div>
+        <div class="form-group">
+          <label for="requestType">Request Type</label>
+          <select id="requestType" [(ngModel)]="requestType">
+            <option value="">Select Request Type</option>
+            <option value="Processing Request Audit Other Purpose">Processing Request Audit Other Purpose</option>
+            <option value="Processing Request Tax Assessment">Processing Request Tax Assessment</option>
+            <option value="Processing Request VAT Review">Processing Request VAT Review</option>
+            <option value="Processing Request Penalty Review">Processing Request Penalty Review</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" [(ngModel)]="status">
+            <option value="">Select Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="taxRegion">Tax Region</label>
+          <select id="taxRegion" [(ngModel)]="taxRegion">
+            <option value="">Select Tax Region</option>
+            <option value="110">110</option>
+            <option value="120">120</option>
+            <option value="130">130</option>
+            <option value="140">140</option>
+            <option value="290">290</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="taxOffice">Tax Office</label>
+          <select id="taxOffice" [(ngModel)]="taxOffice">
+            <option value="">Select Tax Office</option>
+            <option value="001">001</option>
+            <option value="002">002</option>
+            <option value="003">003</option>
+            <option value="004">004</option>
+            <option value="911">911</option>
+          </select>
+        </div>
+        <div class="button-container">
+          <button class="search-btn" (click)="searchPRCase()">Search PR Case</button>
+        </div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>PR Number</th>
+            <th>Date</th>
+            <th>Request Type</th>
+            <th>Request Source</th>
+            <th>Requesting User</th>
+            <th>Taxpayer Id</th>
+            <th>Tax Region</th>
+            <th>Tax Office</th>
+            <th>PR Case Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (request of processingRequests; track request.prNumber) {
+            <tr>
+              <td>
+                <button class="select-btn" (click)="selectProcessingRequest(request)">Select</button>
+              </td>
+              <td>{{ request.prNumber }}</td>
+              <td>{{ request.date }}</td>
+              <td>{{ request.requestType }}</td>
+              <td>{{ request.requestSource }}</td>
+              <td>{{ request.requestingUser }}</td>
+              <td>{{ request.taxpayerId }}</td>
+              <td>{{ request.taxRegion }}</td>
+              <td>{{ request.taxOffice }}</td>
+              <td>{{ request.prCaseNumber }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

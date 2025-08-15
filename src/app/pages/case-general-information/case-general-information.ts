@@ -16,10 +16,9 @@ export class CaseGeneralInformation implements OnInit {
   private caseDetailsService = inject(CaseDetailsService);
 
   ngOnInit(): void {
-    const caseIdParam = this.route.snapshot.paramMap.get('id');
-    if (caseIdParam) {
-      const caseId = parseInt(caseIdParam, 10);
-      this.caseDetailsService.getCaseById(caseId).subscribe(details => {
+    const recordIdParam = this.route.snapshot.paramMap.get('id');
+    if (recordIdParam) {
+      this.caseDetailsService.getCaseById(recordIdParam).subscribe(details => {
         this.caseDetails = details;
       });
     }

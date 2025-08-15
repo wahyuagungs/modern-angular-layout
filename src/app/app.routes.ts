@@ -24,6 +24,7 @@ export const routes: Routes = [
   // Tax Officer routes
   { path: 'tax-officers-search', component: TaxOfficersSearch, title: 'Tax Officers Search' },
 
+
   // Wildcard route to handle any unknown URLs
   { path: '**', redirectTo: 'home' }
 ];

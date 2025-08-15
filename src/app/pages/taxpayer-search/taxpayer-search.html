@@ -1,11 +1,54 @@
 <div class="page-container">
-  <div class="page-header">
-    <h1>Taxpayer Search</h1>
-    <p>Search and find taxpayer information</p>
-  </div>
   <div class="page-content">
-    <div class="content-placeholder">
-      <p>Taxpayer Search content will be implemented here.</p>
+    <div class="search-panel">
+      <div class="search-header">Search Taxpayer</div>
+      <div class="search-body">
+        <div class="form-group">
+          <label for="taxpayerId">Taxpayer Id</label>
+          <input type="text" id="taxpayerId" [(ngModel)]="taxpayerId" />
+        </div>
+        <div class="form-group">
+          <label for="taxpayerName">Taxpayer Name</label>
+          <input type="text" id="taxpayerName" [(ngModel)]="taxpayerName" />
+        </div>
+        <div class="button-container">
+          <button class="search-btn" (click)="searchTaxpayers()">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Unique Identification Number</th>
+            <th>Name</th>
+            <th>Taxpayer Type</th>
+            <th>Taxpayer Category</th>
+            <th>Taxpayer Status</th>
+            <th>Tax Region</th>
+            <th>Tax Office</th>
+            <th>Registration Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (taxpayer of taxpayers; track taxpayer.RecordId) {
+            <tr>
+              <td>
+                <button class="select-btn" (click)="selectTaxpayer(taxpayer)">Select</button>
+              </td>
+              <td>{{ taxpayer.UniqueIdentificationNumber }}</td>
+              <td>{{ taxpayer.Name }}</td>
+              <td>{{ taxpayer.TaxpayerType }}</td>
+              <td>{{ taxpayer.TaxpayerCategory }}</td>
+              <td>{{ taxpayer.TaxpayerStatus }}</td>
+              <td>{{ taxpayer.TaxRegion }}</td>
+              <td>{{ taxpayer.TaxOffice }}</td>
+              <td>{{ taxpayer.RegistrationDate | date:'yyyy-MM-dd' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
