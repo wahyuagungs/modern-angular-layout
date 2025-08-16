@@ -53,21 +53,3 @@
   </div>
 }
 
-@if (showConfirmationModal) {
-  <div class="confirmation-overlay" (click)="onCancelConfirmation()">
-    <div class="confirmation-container" (click)="$event.stopPropagation()">
-      <div class="confirmation-header">
-        <h4>Confirm Action</h4>
-      </div>
-
-      <div class="confirmation-body">
-        <p>Are you sure you want to cancel this case?</p>
-
-        <div class="confirmation-actions">
-          <button class="confirm-btn yes-btn" (click)="onConfirmCancel()">Yes</button>
-          <button class="confirm-btn no-btn" (click)="onCancelConfirmation()">No</button>
-        </div>
-      </div>
-    </div>
-  </div>
-}

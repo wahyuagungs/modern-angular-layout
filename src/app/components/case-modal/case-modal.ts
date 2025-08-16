@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CaseData } from '../../services/cases-data.service';
+import { ModalService } from '../../shared/modal/modal.service';
+import { ConfirmationDialogComponent } from '../../shared/modal/confirmation-dialog.component';
 
 @Component({
   selector: 'app-case-modal',
@@ -16,7 +18,8 @@ export class CaseModal {
   @Output() cancelCase = new EventEmitter<CaseData>();
   @Output() coretaxCase = new EventEmitter<CaseData>();
 
-  showConfirmationModal = false;
+
+  constructor(private modalService: ModalService) {}
 
   onClose(): void {
     this.close.emit();
@@ -29,7 +32,24 @@ export class CaseModal {
   }
 
   onCancelCase(): void {
-    this.showConfirmationModal = true;
+    // Old approach:
+    // this.showConfirmationModal = true;
+    // New generic reusable modal:
+    const ref = this.modalService.open(ConfirmationDialogComponent, {
+      title: 'Cancel Case',
+      data: { },
+      dismissOnBackdrop: false
+    });
+    // Configure message / label dynamically
+    if (ref.componentInstance) {
+      ref.componentInstance.message = 'Are you sure you want to cancel this case?';
+      ref.componentInstance.confirmLabel = 'Yes, Cancel';
+    }
+    ref.afterClosed().subscribe(confirmed => {
+      if (confirmed && this.caseData) {
+        this.cancelCase.emit(this.caseData);
+      }
+    });
   }
 
   onCoretaxCase(): void {
@@ -38,16 +58,5 @@ export class CaseModal {
       window.open(coretaxUrl, '_blank');
       this.coretaxCase.emit(this.caseData);
     }
-  }
-
-  onConfirmCancel(): void {
-    if (this.caseData) {
-      this.cancelCase.emit(this.caseData);
-    }
-    this.showConfirmationModal = false;
-  }
-
-  onCancelConfirmation(): void {
-    this.showConfirmationModal = false;
   }
 }
