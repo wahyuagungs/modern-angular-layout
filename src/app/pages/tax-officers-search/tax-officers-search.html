@@ -1,67 +1,94 @@
 <div class="page-container">
   <div class="page-content">
-    <div class="search-panel">
-      <div class="search-header">Search User</div>
-      <div class="search-body">
-        <div class="form-group">
-          <label for="namaUsernameNip">Nama/NIP/Username</label>
-          <input type="text" id="namaUsernameNip" [(ngModel)]="namaUsernameNip" />
+    <div class="panels-container">
+      <div class="search-panel">
+        <div class="search-header">Search User</div>
+        <div class="search-body">
+          <div class="form-group">
+            <label for="namaUsernameNip">Nama/NIP/Username</label>
+            <input type="text" id="namaUsernameNip" [(ngModel)]="namaUsernameNip" />
+          </div>
+          <div class="form-group">
+            <label for="jabatan">Jabatan</label>
+            <select id="jabatan" [(ngModel)]="jabatan">
+              <option value="">Select Jabatan</option>
+              <option value="Tenaga Pengkaji">Tenaga Pengkaji</option>
+              <option value="Staf Ahli Menteri Keuangan">Staf Ahli Menteri Keuangan</option>
+              <option value="Direktur Jenderal">Direktur Jenderal</option>
+              <option value="Pemeriksa Pajak Muda">Pemeriksa Pajak Muda</option>
+              <option value="Kepala Bidang">Kepala Bidang</option>
+              <option value="Pelaksana">Pelaksana</option>
+              <option value="Penelaah Keberatan">Penelaah Keberatan</option>
+              <option value="Penilai Pajak Ahli Muda">Penilai Pajak Ahli Muda</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="unitOrganisasi">Unit Organisasi</label>
+            <select id="unitOrganisasi" [(ngModel)]="unitOrganisasi">
+              <option value="">Select Unit Organisasi</option>
+              <option value="Pengkaji Bidang Ekstensifikasi dan Intensifikasi Pajak">Pengkaji Bidang Ekstensifikasi dan Intensifikasi Pajak</option>
+              <option value="Staf Ahli Bidang Pengawasan Pajak">Staf Ahli Bidang Pengawasan Pajak</option>
+              <option value="Staf Ahli Bidang Peraturan dan Penegakan Hukum Pajak">Staf Ahli Bidang Peraturan dan Penegakan Hukum Pajak</option>
+              <option value="Pengkaji Bidang Pelayanan Perpajakan">Pengkaji Bidang Pelayanan Perpajakan</option>
+              <option value="Pengkaji Bidang Pengawasan dan Penegakan Hukum Perpajakan">Pengkaji Bidang Pengawasan dan Penegakan Hukum Perpajakan</option>
+              <option value="Pengkaji Bidang Pembinaan dan Penertiban Sumber Daya Manusia">Pengkaji Bidang Pembinaan dan Penertiban Sumber Daya Manusia</option>
+              <option value="Direktorat Jenderal Pajak">Direktorat Jenderal Pajak</option>
+              <option value="Staf Ahli Bidang Kepatuhan Pajak">Staf Ahli Bidang Kepatuhan Pajak</option>
+              <option value="Kantor Wilayah Modern">Kantor Wilayah Modern</option>
+              <option value="Bidang Pendaftaran, Ekstensifikasi, dan Penilaian">Bidang Pendaftaran, Ekstensifikasi, dan Penilaian</option>
+              <option value="Seksi Keberatan, Banding, dan Pengurangan III">Seksi Keberatan, Banding, dan Pengurangan III</option>
+              <option value="Seksi Keberatan, Banding, dan Pengurangan I">Seksi Keberatan, Banding, dan Pengurangan I</option>
+              <option value="Bidang Data dan Pengawasan Potensi Perpajakan">Bidang Data dan Pengawasan Potensi Perpajakan</option>
+              <option value="Seksi Administrasi Bukti Permulaan dan Penyidikan">Seksi Administrasi Bukti Permulaan dan Penyidikan</option>
+              <option value="Seksi Keberatan, Banding, dan Pengurangan II">Seksi Keberatan, Banding, dan Pengurangan II</option>
+              <option value="Seksi Bimbingan Penyuluhan dan Pengelolaan Dokumen">Seksi Bimbingan Penyuluhan dan Pengelolaan Dokumen</option>
+              <option value="Seksi Bimbingan Pengawasan">Seksi Bimbingan Pengawasan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="kantor">Kantor</label>
+            <select id="kantor" [(ngModel)]="kantor">
+              <option value="">Select Kantor</option>
+              <option value="Kantor Pusat DJP">Kantor Pusat DJP</option>
+              <option value="Kanwil DJP Kalimantan Selatan dan Tengah">Kanwil DJP Kalimantan Selatan dan Tengah</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="isPensiun">Is Pensiun</label>
+            <select id="isPensiun" [(ngModel)]="isPensiun">
+              <option value="false">False</option>
+              <option value="true">True</option>
+            </select>
+          </div>
+          <div class="button-container">
+            <button class="search-btn" (click)="searchTaxOfficers()">Search</button>
+            <button class="reset-btn" (click)="resetSearch()">Reset</button>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="jabatan">Jabatan</label>
-          <select id="jabatan" [(ngModel)]="jabatan">
-            <option value="">Select Jabatan</option>
-            <option value="Tenaga Pengkaji">Tenaga Pengkaji</option>
-            <option value="Staf Ahli Menteri Keuangan">Staf Ahli Menteri Keuangan</option>
-            <option value="Direktur Jenderal">Direktur Jenderal</option>
-            <option value="Pemeriksa Pajak Muda">Pemeriksa Pajak Muda</option>
-            <option value="Kepala Bidang">Kepala Bidang</option>
-            <option value="Pelaksana">Pelaksana</option>
-            <option value="Penelaah Keberatan">Penelaah Keberatan</option>
-            <option value="Penilai Pajak Ahli Muda">Penilai Pajak Ahli Muda</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="unitOrganisasi">Unit Organisasi</label>
-          <select id="unitOrganisasi" [(ngModel)]="unitOrganisasi">
-            <option value="">Select Unit Organisasi</option>
-            <option value="Pengkaji Bidang Ekstensifikasi dan Intensifikasi Pajak">Pengkaji Bidang Ekstensifikasi dan Intensifikasi Pajak</option>
-            <option value="Staf Ahli Bidang Pengawasan Pajak">Staf Ahli Bidang Pengawasan Pajak</option>
-            <option value="Staf Ahli Bidang Peraturan dan Penegakan Hukum Pajak">Staf Ahli Bidang Peraturan dan Penegakan Hukum Pajak</option>
-            <option value="Pengkaji Bidang Pelayanan Perpajakan">Pengkaji Bidang Pelayanan Perpajakan</option>
-            <option value="Pengkaji Bidang Pengawasan dan Penegakan Hukum Perpajakan">Pengkaji Bidang Pengawasan dan Penegakan Hukum Perpajakan</option>
-            <option value="Pengkaji Bidang Pembinaan dan Penertiban Sumber Daya Manusia">Pengkaji Bidang Pembinaan dan Penertiban Sumber Daya Manusia</option>
-            <option value="Direktorat Jenderal Pajak">Direktorat Jenderal Pajak</option>
-            <option value="Staf Ahli Bidang Kepatuhan Pajak">Staf Ahli Bidang Kepatuhan Pajak</option>
-            <option value="Kantor Wilayah Modern">Kantor Wilayah Modern</option>
-            <option value="Bidang Pendaftaran, Ekstensifikasi, dan Penilaian">Bidang Pendaftaran, Ekstensifikasi, dan Penilaian</option>
-            <option value="Seksi Keberatan, Banding, dan Pengurangan III">Seksi Keberatan, Banding, dan Pengurangan III</option>
-            <option value="Seksi Keberatan, Banding, dan Pengurangan I">Seksi Keberatan, Banding, dan Pengurangan I</option>
-            <option value="Bidang Data dan Pengawasan Potensi Perpajakan">Bidang Data dan Pengawasan Potensi Perpajakan</option>
-            <option value="Seksi Administrasi Bukti Permulaan dan Penyidikan">Seksi Administrasi Bukti Permulaan dan Penyidikan</option>
-            <option value="Seksi Keberatan, Banding, dan Pengurangan II">Seksi Keberatan, Banding, dan Pengurangan II</option>
-            <option value="Seksi Bimbingan Penyuluhan dan Pengelolaan Dokumen">Seksi Bimbingan Penyuluhan dan Pengelolaan Dokumen</option>
-            <option value="Seksi Bimbingan Pengawasan">Seksi Bimbingan Pengawasan</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="kantor">Kantor</label>
-          <select id="kantor" [(ngModel)]="kantor">
-            <option value="">Select Kantor</option>
-            <option value="Kantor Pusat DJP">Kantor Pusat DJP</option>
-            <option value="Kanwil DJP Kalimantan Selatan dan Tengah">Kanwil DJP Kalimantan Selatan dan Tengah</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="isPensiun">Is Pensiun</label>
-          <select id="isPensiun" [(ngModel)]="isPensiun">
-            <option value="false">False</option>
-            <option value="true">True</option>
-          </select>
-        </div>
-        <div class="button-container">
-          <button class="search-btn" (click)="searchTaxOfficers()">Search</button>
-          <button class="reset-btn" (click)="resetSearch()">Reset</button>
+      </div>
+      <div class="tips-panel">
+        <div class="tips-header">Tips</div>
+        <div class="tips-body">
+          <div class="tip-item">
+            <h4>🔍 User Search</h4>
+            <p>Search by Name, NIP (Employee ID), or Username. You can use partial matches to find tax officers.</p>
+          </div>
+          <div class="tip-item">
+            <h4>🏢 Organization Filters</h4>
+            <p>Use Jabatan (Position) and Unit Organisasi to narrow down results by organizational structure.</p>
+          </div>
+          <div class="tip-item">
+            <h4>🏛️ Office Selection</h4>
+            <p>Filter by specific tax office locations to find officers in particular regional offices.</p>
+          </div>
+          <div class="tip-item">
+            <h4>👤 Officer Status</h4>
+            <p>Use "Is Pensiun" filter to search for active or retired tax officers based on their employment status.</p>
+          </div>
+          <div class="tip-item">
+            <h4>📊 Results Table</h4>
+            <p>Click "Select" to choose an officer. The table shows detailed information including validity periods and status.</p>
+          </div>
         </div>
       </div>
     </div>

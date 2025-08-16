@@ -1,19 +1,39 @@
 <div class="page-container">
   <div class="page-content">
-    <div class="search-panel">
-      <div class="search-header">Search Cases</div>
-      <div class="search-body">
-        <div class="form-group">
-          <label for="caseNumber">Case Number</label>
-          <input type="text" id="caseNumber" [(ngModel)]="caseNumber" />
+    <div class="panels-container">
+      <div class="search-panel">
+        <div class="search-header">Search Cases</div>
+        <div class="search-body">
+          <div class="form-group">
+            <label for="caseNumber">Case Number</label>
+            <input type="text" id="caseNumber" [(ngModel)]="caseNumber" />
+          </div>
+          <div class="form-group">
+            <label for="taxpayerId">Taxpayer Identification Number</label>
+            <input type="text" id="taxpayerId" [(ngModel)]="taxpayerId" />
+          </div>
+          <div class="button-container">
+            <button class="search-btn" (click)="searchCases()">Search Case</button>
+            <button class="reset-btn" (click)="resetSearch()">Reset</button>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="taxpayerId">Taxpayer Identification Number</label>
-          <input type="text" id="taxpayerId" [(ngModel)]="taxpayerId" />
-        </div>
-        <div class="button-container">
-          <button class="search-btn" (click)="searchCases()">Search Case</button>
-          <button class="reset-btn" (click)="resetSearch()">Reset</button>
+      </div>
+      <div class="tips-panel">
+        <div class="tips-header">Tips</div>
+        <div class="tips-body">
+          <div class="tip-item">
+            <h4>🔍 How to Search</h4>
+            <p>You can use Case Number or Case Aggregate Identifier (UUID or GUID) to search a case.
+            Or You Can Find Cases by Taxpayer Identification Number or Taxpayer Aggregate Identifier (UUID or GUID)</p>
+          </div>
+          <div class="tip-item">
+            <h4>📋 Case Selection</h4>
+            <p>Click the "Select" button to view detailed case information in a modal window to Cancel Case or Click Case Details for further operations.</p>
+          </div>
+          <div class="tip-item">
+            <h4>📊 Table Navigation</h4>
+            <p>By default there will only be 10 data displayed if you are using Taxpayer Identification Number Only</p>
+          </div>
         </div>
       </div>
     </div>
@@ -62,7 +82,7 @@
   </div>
 </div>
 
-<app-case-modal 
+<app-case-modal
   [isVisible]="showModal"
   [caseData]="selectedCase"
   (close)="onModalClose()"

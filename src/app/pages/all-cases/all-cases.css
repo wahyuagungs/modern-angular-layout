@@ -1,9 +1,20 @@
 /* Page-specific styles for all-cases component */
 /* All common page styles are now in global styles.css */
 
+.panels-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .search-panel {
   border: 1px solid #ccc;
-  margin-bottom: 1rem;
+  flex: 0 0 60%;
+}
+
+.tips-panel {
+  border: 1px solid #ccc;
+  flex: 0 0 40%;
 }
 
 .search-header {
@@ -89,4 +100,36 @@
 
 .reset-btn:active {
   background-color: #495057;
+}
+
+.tips-header {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.tips-body {
+  padding: 1rem;
+}
+
+.tip-item {
+  margin-bottom: 1rem;
+}
+
+.tip-item:last-child {
+  margin-bottom: 0;
+}
+
+.tip-item h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: #26378c;
+  font-weight: 600;
+}
+
+.tip-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #555;
 }
